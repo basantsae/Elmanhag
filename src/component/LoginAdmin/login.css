@@ -1,0 +1,244 @@
+*{
+    box-sizing: border-box;
+}
+.container-login {
+  display: inline-flex;
+  width: 100%;
+}
+
+.img-login {
+  width: 600px;
+  height: 100%;
+  min-height: 100vh;
+  /* height: 100%; */
+}
+.img-login img {
+  width: 600px;
+  height: 100%;
+
+  min-height: 100vh;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-repeat: no-repeat;
+}
+.img-login::before {
+  content: "";
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  width: 600px;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.24); /* Color with opacity */
+  pointer-events: none; /* Ensure the overlay does not interfere with any interactions */
+}
+
+.add-login {
+  width: 100%;
+  min-height: 100vh;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.add-login h1 {
+  margin: 20px;
+  /* margin-top: 20px; */
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 71px;
+  text-align: right;
+  color: #d01025;
+}
+
+
+.btn {
+    width: 200px;
+    height: 60px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    /* background: #D01025; */
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: right;
+    color:#d01025;
+    background: #ffffff;
+  }
+
+  .btn:hover,.active-btn{
+    color:#ffffff;
+    background:#d01025;
+  }
+  
+
+.btn-login {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-login {
+  text-align: right;
+  margin: 20px;
+  margin-top: 30px;
+}
+
+.input-login h2 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: right;
+  color: #6b6b6b;
+}
+
+.input-name {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-name > input {
+  box-sizing: border-box;
+  width: 300px;
+  height: 56px;
+  border: 1px solid #d01025;
+  border-radius: 16px;
+  text-align: right;
+  padding: 15px;
+}
+
+.input-name a {
+  color: #d01025;
+  text-decoration: underline;
+}
+
+.submit-btn{
+    font-weight: 700;
+    font-size: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 56px;
+    border: 1px solid #d01025;
+    border-radius: 16px;
+    text-align: center;
+    padding: 15px;
+    background-color: #d01025;
+    color:#fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.forgetpass-btn{
+  background: #f6f6f6;
+  border: none;
+  text-decoration: underline;
+  color: #d01025;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* General styling for OTP input fields */
+.otp{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.otp-form {
+  display: flex;
+  gap: 10px; /* Space between input fields */
+}
+
+.otp-input {
+  width: 72px;
+  height: 72px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #d01025;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.otp-input:focus {
+  border-color:#d01025; /* Border color when focused */
+}
+
+/* Underline that disappears when code is entered */
+.otp-input::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #d01025; /* Underline color */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.otp-input.filled::after {
+  transform: scaleX(0); /* Hide underline when input is filled */
+}
+
+
+.otp-text {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0; /* Add space above and below OTP */
+}
+
+.contact-info {
+  display: block;
+  font-weight: normal;
+  color: #333; /* Adjust color as needed */
+}
+.verify-otp-button{
+  width: 390px;
+  height: 56px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  /* background: #D01025; */
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: right;
+  color:#fff;
+  background: #d01025;
+  margin-top: 30px;
+}
+
+.timer{
+  margin-top: 30px;
+}
+.resend{
+  margin-top: 5px;
+}
+
+
+ 

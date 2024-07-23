@@ -1,0 +1,147 @@
+.contain{
+    margin-left: 200px;
+    margin-top: 40px;
+}
+
+.student-text{
+    display: flex;
+    justify-content: center;
+    color: #d01025;
+    /* font-size: 48px; */
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.card{
+    padding: 10px;
+    background-color: #d01025;
+    color:#fff;
+    width: 230px;
+    height: 150px;
+    border-radius: 16px;
+}
+
+.title{
+    font-weight: 700;
+}
+
+.count{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.filter{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-bar {
+    background: #fff;
+    height: 45px;
+    width: 200px;
+    color: #a7b1ab;
+    border: none;
+    background: #fff url("../imgs/icons8-filter-50.png") 17px 12px no-repeat;
+    /* display: inline-block;
+    text-align: left; */
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 0px 0px 50px;
+    font-size: 12px;
+    border-radius: 16px;
+    background-size: 20px 20px;
+  }
+
+  .filter-bar {
+    background: #fff;
+    height: 45px;
+    width: 200px;
+    color: #a7b1ab;
+    border: none;
+    background: #fff url("../imgs/icons8-filter-50.png") 17px 12px no-repeat;
+    /* display: inline-block;
+    text-align: left; */
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 0px 0px 50px;
+    font-size: 12px;
+    border-radius: 16px;
+    background-size: 20px 20px;
+  }
+
+  .add-btn{
+    background: #fff;
+    height: 45px;
+    width: 100px;
+    color: #a7b1ab;
+    border: none;
+    background: #fff url("../imgs/icons8-plus-32.png") 17px 12px no-repeat;
+    /* display: inline-block;
+    text-align: left; */
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 0px 0px 20px;
+    font-size: 12px;
+    border-radius: 16px;
+    background-size: 20px 20px;
+  }
+
+
+
+/* style for table container */
+
+  .table-container {
+    margin: 20px;
+    margin-top: 40px;
+    /* margin-top: 40px; */
+    /* padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa; */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  thead{
+    color: #d01025;
+    font-weight: 400;
+  }
+
+  thead tr >th{
+    width: 158px;
+    height: 56px;
+
+    font-weight: 400;
+    /* font-size: 24px; */
+
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* th {
+    background-color: #f2f2f2;
+  } */
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  td > div {
+    margin-bottom: 5px; /* Add space between combined items */
+  }
+  
