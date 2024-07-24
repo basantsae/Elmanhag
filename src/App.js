@@ -18,7 +18,6 @@ import ParentInfo from './component/LoginAdmin/ParentInfo';
 
 import CheckOTP from './component/LoginAdmin/CheckOTP';
 
-import React, { useState } from 'react';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {

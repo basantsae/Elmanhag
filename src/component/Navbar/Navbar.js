@@ -1,7 +1,7 @@
 import './Navbar.css'
 import React from 'react';
 import logo from './المنهج.svg';
-import { useState,useEffect  } from 'react';
+import { useState} from 'react';
 
 function Navbar(){
 
