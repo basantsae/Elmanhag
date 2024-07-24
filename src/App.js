@@ -44,7 +44,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Navbar/>}/>
-
         <Route path="login" element={<Login />} />
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/forgot-password" element={<Forgetpassword />} />
@@ -61,15 +60,6 @@ function App() {
         <Route path="/purchases" element={<Purchases/>}/>
         <Route path="/login-history" element={<LoginHistory/>}/>
         <Route path="/add" element={<Add/>}/>
-
-
-
-
-
-
-
-
-
 
       </Routes>
     </Router>

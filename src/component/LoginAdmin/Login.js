@@ -22,10 +22,11 @@ function Login() {
     try {
       const response = await login(email, password);
       if (response.success) {
+        console.log("Login Successfully")
         localStorage.setItem('token', response._token);
         navigate('/'); // Adjust the path as needed
       } else {
-        setError('Login failed: ' + (response.faild || 'Unknown error'));
+        setError('Login failed: ' + (response.faild || 'input value'));
       }
     } catch (error) {
       setError(error.message);
