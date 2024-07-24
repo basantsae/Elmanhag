@@ -167,7 +167,7 @@ body{
 
 /* General styling for OTP input fields */
 .otp{
-  margin: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,6 +187,16 @@ body{
   outline: none;
   box-sizing: border-box;
   position: relative;
+}
+
+.otp-input::placeholder {
+  color: #D01025;
+  position: absolute;
+  width: 24px;
+  height: 0px;
+  left: calc(50% - 24px/2 + 0.01px);
+  top: calc(50% - 0px/2);
+  border: 1px solid #CF202F;
 }
 
 .otp-input:focus {
@@ -254,4 +264,25 @@ body{
 }
 
 
- 
+.svg{
+  display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction: row-reverse;
+    margin-bottom: 40px;
+}
+
+.progress{
+  background-color: #E9E9E9;
+  width: 398.89px;
+  height: 10.93px;
+  border-radius: 20px;
+}
+
+.line-progress {
+  height: 10px;
+  background-color: #d01025;
+  transition: width 0.3s;
+  border-radius: 20px;
+
+}
