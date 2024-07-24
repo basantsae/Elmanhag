@@ -34,23 +34,18 @@ function App() {
             {/* <Progress/> */}
             {/* <LoginHistory/> */}
             {/* <Add/> */}
-
-
-
-
-
-
             {/* <Login/> */}
             {/* <CreateAccount/> */}
             {/* <Forgetpassword/> */}
             {/* <NewPassword/> */}
-
             {/* <StudentInfo/> */}
             {/* <ParentInfo/> */}
 
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Navbar/>}/>
+
+        <Route path="login" element={<Login />} />
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/forgot-password" element={<Forgetpassword />} />
         <Route path="/check-otp" element={<CheckOTP />} />
@@ -58,9 +53,17 @@ function App() {
         <Route path="/student-info" element={<StudentInfo />} />
         <Route path="/parent-info" element={<ParentInfo />} />
 
-        <Route path="/student" element={<Student/>}/>
 
-        <Route path="/navbar" element={<Navbar/>}/>
+        <Route path="/student" element={<Student/>}/>
+        <Route path="/parent" element={<Parent/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/progress" element={<Progress/>}/>
+        <Route path="/purchases" element={<Purchases/>}/>
+        <Route path="/login-history" element={<LoginHistory/>}/>
+        <Route path="/add" element={<Add/>}/>
+
+
+
 
 
 

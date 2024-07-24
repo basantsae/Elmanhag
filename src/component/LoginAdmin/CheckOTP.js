@@ -92,11 +92,13 @@ function CheckOTP({ contact }) {
         <div className="add-login">
           <h1>OTP التحقق من</h1>
           <div className="input-login">
-          <h2 class="otp-header">
+            <h2>{contact}{` المرسلة اليOTP أدخل كلمة مرور `}</h2>
+          {/* <h2 class="otp-header">
   أدخل كلمة مرور
   <span class="otp-text">OTP</span>
   <span class="contact-info">المرسلة إلى <span id="contact-number">{contact}</span></span>
-</h2>
+</h2> */}
+
             <div className="input-name">
               <form onSubmit={handleVerifyOtp} className='otp'>
                 <div className='otp-form'>
@@ -117,7 +119,7 @@ function CheckOTP({ contact }) {
 
                 {timeLeft > 0 && (
                 <div className="timer">
-                  <p>Time left: {formatTimeLeft(timeLeft)}</p>
+                  <p>{formatTimeLeft(timeLeft)}</p>
                 </div>
               )}
                <div className="resend">

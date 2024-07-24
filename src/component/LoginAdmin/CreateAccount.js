@@ -1,6 +1,10 @@
 import img from '../imgs/40c007c647ea8034751aec3d7d283fa4.png';
 import './login.css'
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+
 function CreateAccount() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="container-login">
@@ -14,7 +18,7 @@ function CreateAccount() {
             <button id="create-btn" className="btn active-btn">
               انشاء حساب{" "}
             </button>
-            <button id="log-btn" className="btn">
+            <button id="log-btn" className="btn" onClick={() => navigate('/login')}>
               تسجيل دخول
             </button>
           </div>

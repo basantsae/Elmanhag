@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import img from "../imgs/40c007c647ea8034751aec3d7d283fa4.png";
 import CheckOTP from './CheckOTP'; // Import CheckOTP component
-//import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 
 function Forgetpassword() {
   const [inputValue, setInputValue] = useState('');
   const [showOtp, setShowOtp] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -25,7 +27,7 @@ function Forgetpassword() {
   return (
     <>
       {showOtp ? (
-        <CheckOTP contact={inputValue} />
+        navigate('/check-otp', { state: { contact: inputValue } }) // Navigate to CheckOTP route with state
       ) : (
         <div className="container-login">
           <div className="img-login">
@@ -34,12 +36,12 @@ function Forgetpassword() {
           <div className="add-login">
             <h1>هل نسيت كلمه المرور</h1>
             <div className="input-login">
-              <h2 >يرجى تسجيل هاتفك أو بريدك
-              OTP الإلكتروني لتسليم </h2>
+                <h2>  {`يرجى تسجيل هاتفك أو بريدك
+                          الإلكتروني  OTP لتسليم`}</h2> 
               <div className="input-name">
                 <input
                   type="text"
-                  placeholder="الايميل او رقم الهاتف"
+                  placeholder="الايميل او رقم التليفون"
                   value={inputValue}
                   onChange={handleInputChange}
                 />
