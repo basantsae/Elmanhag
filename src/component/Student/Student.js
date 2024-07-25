@@ -6,7 +6,7 @@ import Navbar from '../Navbar/Navbar.js';
 function Student() {
   
 
-    const [data, setData] = useState([
+    const [data] = useState([
         { name: 'John Doe', phone: '123-456-7890', country: 'USA', city: 'New York', category: 'Student', paid: 'Free', status: 'Active' },
         { name: 'Jane Smith', phone: '987-654-3210', country: 'UK', city: 'London', category: 'Parent', paid: 'Paid', status: 'Banned' },
         { name: 'Alice Johnson', phone: '456-789-0123', country: 'Canada', city: 'Toronto', category: 'Admin', paid: 'Free', status: 'Pending' },

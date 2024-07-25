@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 function LoginHistory(){
-    const [data, setData] = useState(['']);
+    const [data] = useState(['']);
     return(
         <>
         <div className="contain">

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 function Purchases() {
 
-    const [data, setData] = useState(['']);
+    const [data] = useState(['']);
   return (
     <>
       <div className="contain">
