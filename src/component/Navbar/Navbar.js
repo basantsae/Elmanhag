@@ -12,40 +12,60 @@ function Navbar(){
     setLanguage((prevLanguage) => (prevLanguage === 'en' ? 'ar' : 'en'));
   };
 
-   
 
-    const [isListUserVisible, setIsListUserVisible] = useState(false);
-    const toggleListVisibility = () => {
-        setIsListUserVisible(!isListUserVisible);
-      };
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isListUserVisible, setIsListUserVisible] = useState(false);
+
+  const handleItemClick = (index) => {
+    setActiveIndex(index);
+    if ([2, 3].includes(index)) {
+      setIsListUserVisible(isListUserVisible); // Toggle the user list visibility
+    } else {
+      setIsListUserVisible(!isListUserVisible); // Hide the user list when other items are clicked
+    }
+  };
+
+  // const [activeIndex, setActiveIndex] = useState(null);
+
+    // const [isListUserVisible, setIsListUserVisible] = useState(false);
+    // const toggleListVisibility = () => {
+    //     setIsListUserVisible(!isListUserVisible);
+    //   };
+
+  const getSvgColor = (index) => (index === activeIndex ? '#D01025' : '#B5B5B5');
+  const getLinkColor = (index) => (index === activeIndex ? '#D01025' : '#B5B5B5');
+
 
     return(
         <>
-        <nav className="navbar">
+      <nav className="navbar">
         <div className="nav-mneu">
+          <div className='nav-title-ul'>
             <h1>Elmanhag</h1>
             <ul>
-                <li>
-                    <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.02 3.82258L3.63 8.02258C2.73 8.72258 2 10.2126 2 11.3426V18.7526C2 21.0726 3.89 22.9726 6.21 22.9726H17.79C20.11 22.9726 22 21.0726 22 18.7626V11.4826C22 10.2726 21.19 8.72258 20.2 8.03258L14.02 3.70258C12.62 2.72258 10.37 2.77258 9.02 3.82258Z" stroke="#D01025" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path  d="M12 18.9727V15.9727" stroke="#D01025" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <li className={activeIndex === 0 ? 'active-tab' : ''} onClick={() => handleItemClick(0)}>
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.02 1.82258L2.63 6.02258C1.73 6.72258 1 8.21258 1 9.34258V16.7526C1 19.0726 2.89 20.9726 5.21 20.9726H16.79C19.11 20.9726 21 19.0726 21 16.7626V9.48258C21 8.27258 20.19 6.72258 19.2 6.03258L13.02 1.70258C11.62 0.722584 9.37 0.772584 8.02 1.82258Z" stroke={getSvgColor(0)} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11 16.9727V13.9727" stroke={getSvgColor(0)} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <a href='/#'>Dashboard</a>
+                    <a href='/#' style={{ color: getLinkColor(0) }}>Dashboard</a>
                 </li>
 
-                <li>
+                <li className={activeIndex === 1 ? 'active-tab' : ''} onClick={() => handleItemClick(1)}>
                     <svg width="24" height="24" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.1605 11.87C12.0605 11.86 11.9405 11.86 11.8305 11.87C9.45055 11.79 7.56055 9.84 7.56055 7.44C7.56055 4.99 9.54055 3 12.0005 3C14.4505 3 16.4405 4.99 16.4405 7.44C16.4305 9.84 14.5405 11.79 12.1605 11.87Z" stroke="#B5B5B5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M7.1607 15.56C4.7407 17.18 4.7407 19.82 7.1607 21.43C9.9107 23.27 14.4207 23.27 17.1707 21.43C19.5907 19.81 19.5907 17.17 17.1707 15.56C14.4307 13.73 9.9207 13.73 7.1607 15.56Z" stroke="#B5B5B5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12.1605 11.87C12.0605 11.86 11.9405 11.86 11.8305 11.87C9.45055 11.79 7.56055 9.84 7.56055 7.44C7.56055 4.99 9.54055 3 12.0005 3C14.4505 3 16.4405 4.99 16.4405 7.44C16.4305 9.84 14.5405 11.79 12.1605 11.87Z" stroke={getSvgColor(1)} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M7.1607 15.56C4.7407 17.18 4.7407 19.82 7.1607 21.43C9.9107 23.27 14.4207 23.27 17.1707 21.43C19.5907 19.81 19.5907 17.17 17.1707 15.56C14.4307 13.73 9.9207 13.73 7.1607 15.56Z" stroke={getSvgColor(1)} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <a href='/#' onClick={toggleListVisibility}>User</a>
+                    <a href='/#' style={{ color: getLinkColor(1) }}>User</a>
                 </li>
+
                 {isListUserVisible && (
                     <ul className="user-list">
-                    <li><a href='/#'>. Student</a></li>
-                    <li><a href='/#'>. Parent</a></li>
-                    <li><a href='/#'>.  Admin</a></li>
-                    </ul>)}
+                    <li className={activeIndex === 2 ? 'active-tab' : ''} onClick={() => handleItemClick(2)}><a href='/#' style={{ color: getLinkColor(2) }}>. Student</a></li>
+                    <li className={activeIndex === 3 ? 'active-tab' : ''} onClick={() => handleItemClick(3)}><a href='/#' style={{ color: getLinkColor(3) }}>. Parent</a></li>
+                    {/* <li onClick={() => handleItemClick(4)}><a href='/#' style={{ color: activeIndex === 4 ? '#D01025' : '#B5B5B5' }}>.  Admin</a></li> */}
+                    </ul>)
+                }
 
                 <li>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +77,7 @@ function Navbar(){
                     <a href='/#'>Education</a>
                 </li>
 
-                <li>
+                {/* <li>
                     <svg width="24" height="24" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.8892 8.105C16.6731 7.59567 16.4089 7.10813 16.1002 6.649L14.4422 7.768C14.92 8.47833 15.2552 9.27476 15.4292 10.113C15.6064 10.9868 15.6064 11.8872 15.4292 12.761C15.3423 13.1831 15.2137 13.5954 15.0452 13.992C14.8814 14.3817 14.6794 14.7541 14.4422 15.104C13.9682 15.803 13.3655 16.4054 12.6662 16.879C11.9565 17.3566 11.1607 17.6918 10.3232 17.866C9.44986 18.041 8.5505 18.041 7.67718 17.866C6.42024 17.6078 5.26683 16.986 4.36018 16.078C3.76127 15.4787 3.28325 14.7699 2.95218 13.99C2.78513 13.5934 2.65719 13.1815 2.57018 12.76C2.3062 11.4586 2.43928 10.1079 2.95218 8.883C3.28198 8.10328 3.75979 7.39489 4.35918 6.797C4.95829 6.19911 5.66638 5.7215 6.44518 5.39C6.84018 5.223 7.25518 5.094 7.67518 5.008C7.78218 4.986 7.89118 4.976 7.99918 4.959V8L12.9992 4L7.99918 0V2.938C7.75607 2.96491 7.5142 3.00195 7.27418 3.049C6.17833 3.27356 5.13749 3.71191 4.21118 4.339C2.56566 5.44902 1.35671 7.09605 0.790919 8.99862C0.225129 10.9012 0.337623 12.9412 1.10918 14.77C1.53872 15.7882 2.16192 16.7134 2.94418 17.494C3.72537 18.2737 4.64912 18.896 5.66518 19.327C7.26252 20.0028 9.02761 20.1768 10.7262 19.826C12.0858 19.545 13.3569 18.9381 14.4303 18.0574C15.5036 17.1767 16.3471 16.0486 16.8882 14.77C17.1082 14.25 17.2772 13.709 17.3882 13.162C17.62 12.0237 17.62 10.8503 17.3882 9.712C17.2743 9.16144 17.1071 8.62325 16.8892 8.105Z" fill="#B5B5B5"/>
                     </svg>
@@ -191,8 +211,9 @@ function Navbar(){
                     <path d="M12.3621 15.9546C11.5151 15.9546 10.6872 15.7033 9.98301 15.2327C9.27882 14.7621 8.72999 14.0932 8.40593 13.3107C8.08187 12.5281 7.99713 11.6671 8.16242 10.8364C8.32772 10.0057 8.73562 9.24267 9.33456 8.6438C9.9335 8.04493 10.6966 7.63711 11.5273 7.4719C12.358 7.3067 13.219 7.39153 14.0015 7.71568C14.784 8.03983 15.4528 8.58873 15.9234 9.29297C16.3939 9.99721 16.6451 10.8252 16.6451 11.6722C16.6438 12.8076 16.1922 13.8963 15.3892 14.6991C14.5863 15.502 13.4976 15.9535 12.3621 15.9546ZM12.3621 8.7959C11.7933 8.79599 11.2372 8.96476 10.7643 9.28086C10.2913 9.59697 9.92276 10.0462 9.70514 10.5718C9.48751 11.0974 9.43062 11.6757 9.54165 12.2336C9.65269 12.7915 9.92666 13.3039 10.3289 13.7061C10.7312 14.1083 11.2437 14.3822 11.8016 14.4932C12.3595 14.6041 12.9378 14.5471 13.4634 14.3294C13.9889 14.1117 14.4381 13.743 14.7541 13.2701C15.0702 12.7971 15.2388 12.241 15.2388 11.6722C15.238 10.9095 14.9346 10.1784 14.3953 9.63913C13.856 9.0999 13.1248 8.79664 12.3621 8.7959Z" fill="#B5B5B5"/>
                     </svg>                    
                     <a href='/#'>Settings</a>
-                </li>
+                </li> */}
             </ul>
+            </div>
         </div>
         <div className="container">
             <div className="welcome">

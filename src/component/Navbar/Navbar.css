@@ -31,7 +31,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #FFFFFF;
     overflow-x: hidden;
     /* padding: 32px; */
     /* padding-top: 25px; */
@@ -41,27 +41,41 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 10px;
     color: #ABABAB;
     align-items: center;
+    border-radius: 0px 0px 40px 0px;
+}
+
+.nav-title-ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-mneu h1 {
+  margin: 25px;
   color: #d01025;
+  font-style: normal;
   font-size: 40px;
   font-weight: 700;
-  line-height: 44.64px;
+  line-height: 45px;
 }
+
 .nav-mneu ul {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   flex-direction: column;
   list-style: none;
+
 }
+
 .nav-mneu ul li {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  font-size: 20px;
 }
+
 .nav-mneu ul li a {
   color: #000;
 }

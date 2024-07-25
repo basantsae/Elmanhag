@@ -17,12 +17,17 @@ import StudentInfo from './component/LoginAdmin/StudentInfo';
 import ParentInfo from './component/LoginAdmin/ParentInfo';
 
 import CheckOTP from './component/LoginAdmin/CheckOTP';
-import {Route, Routes } from 'react-router-dom';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 function App() {
 
   return (
     <div className="App">
+
+      <Router>
 
       <Routes>
         <Route path="/" element={<Navbar/>}/>
@@ -45,7 +50,7 @@ function App() {
         <Route path="/add" element={<Add/>}/>
 
       </Routes>
-
+  </Router>
 
       </div>
 
