@@ -17,15 +17,12 @@ import StudentInfo from './component/LoginAdmin/StudentInfo';
 import ParentInfo from './component/LoginAdmin/ParentInfo';
 
 import CheckOTP from './component/LoginAdmin/CheckOTP';
-
-
 import {Route, Routes } from 'react-router-dom';
+
 function App() {
 
   return (
     <div className="App">
-
-      <div className='container'>
 
       <Routes>
         <Route path="/" element={<Navbar/>}/>
@@ -51,10 +48,8 @@ function App() {
 
 
       </div>
-      
 
             
-    </div>
   );
 }
 
