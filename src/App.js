@@ -19,33 +19,20 @@ import ParentInfo from './component/LoginAdmin/ParentInfo';
 import CheckOTP from './component/LoginAdmin/CheckOTP';
 
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {Route, Routes } from 'react-router-dom';
 function App() {
 
   return (
     <div className="App">
-      <>
-            {/* <Navbar/> */}
-            {/* <Student/> */}
-            {/* <Profile/> */}
-            {/* <Parent/> */}
-            {/* <Purchases/> */}
-            {/* <Progress/> */}
-            {/* <LoginHistory/> */}
-            {/* <Add/> */}
-            {/* <Login/> */}
-            {/* <CreateAccount/> */}
-            {/* <Forgetpassword/> */}
-            {/* <NewPassword/> */}
-            {/* <StudentInfo/> */}
-            {/* <ParentInfo/> */}
 
-    <Router>
+      <div className='container'>
+
       <Routes>
         <Route path="/" element={<Navbar/>}/>
-        <Route path="login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+
         <Route path="/create-account" element={<CreateAccount />} />
-        <Route path="/forgot-password" element={<Forgetpassword />} />
+        <Route path="/forget-password" element={<Forgetpassword />} />
         <Route path="/check-otp" element={<CheckOTP />} />
         <Route path="/new-password" element={<NewPassword />} />
         <Route path="/student-info" element={<StudentInfo />} />
@@ -61,10 +48,12 @@ function App() {
         <Route path="/add" element={<Add/>}/>
 
       </Routes>
-    </Router>
+
+
+      </div>
+      
 
             
-      </>
     </div>
   );
 }

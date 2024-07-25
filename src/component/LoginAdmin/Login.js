@@ -60,7 +60,7 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button className='forgetpass-btn' onClick={() => navigate('/forgot-password')}>هل نسيت كلمه المرور؟</button>
+              <button className='forgetpass-btn' onClick={() => navigate('/forget-password')}>هل نسيت كلمه المرور؟</button>
               <button className='submit-btn' onClick={handleSubmit}>تسجيل الدخول</button>
               {error && <p className="error-message">{error}</p>}
             </div>
