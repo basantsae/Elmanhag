@@ -1,5 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
+import React from 'react';
+
+
 import Navbar from './component/Navbar/Navbar';
 import Student from './component/Student/Student';
 import Profile from './component/Student/Profile';
@@ -8,39 +11,30 @@ import Purchases from './component/Student/Purchases';
 import Progress from './component/Student/Progress';
 import LoginHistory from './component/Student/LoginHistory';
 import Add from './component/Student/Add';
-
 import Login from './component/LoginAdmin/Login';
 import CreateAccount from './component/LoginAdmin/CreateAccount';
 import Forgetpassword from './component/LoginAdmin/Forgetpassword';
 import NewPassword from './component/LoginAdmin/NewPassword';
 import StudentInfo from './component/LoginAdmin/StudentInfo';
 import ParentInfo from './component/LoginAdmin/ParentInfo';
-
 import CheckOTP from './component/LoginAdmin/CheckOTP';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+
+import {BrowserRouter as Router,Routes,Route,} from 'react-router-dom';
 function App() {
 
   return (
     <div className="App">
 
-      <Router>
-
+    <Router>
       <Routes>
         <Route path="/" element={<Navbar/>}/>
         <Route path="/login" element={<Login />} />
-
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/forget-password" element={<Forgetpassword />} />
         <Route path="/check-otp" element={<CheckOTP />} />
         <Route path="/new-password" element={<NewPassword />} />
         <Route path="/student-info" element={<StudentInfo />} />
         <Route path="/parent-info" element={<ParentInfo />} />
-
-
         <Route path="/student" element={<Student/>}/>
         <Route path="/parent" element={<Parent/>}/>
         <Route path="/profile" element={<Profile/>}/>
@@ -48,7 +42,6 @@ function App() {
         <Route path="/purchases" element={<Purchases/>}/>
         <Route path="/login-history" element={<LoginHistory/>}/>
         <Route path="/add" element={<Add/>}/>
-
       </Routes>
   </Router>
 
