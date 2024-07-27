@@ -27,8 +27,8 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/" element={<Navbar/>}/>
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login/>}/>
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/forget-password" element={<Forgetpassword />} />
         <Route path="/check-otp" element={<CheckOTP />} />

@@ -10,13 +10,6 @@ function Login() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-//   const handleCreateAccountClick = () => {
-//     navigate('/create-account'); // Navigate to the CreateAccount route
-//   };
-//   const handleForgotPasswordClick = () => {
-//     navigate('/forgot-password'); // Navigate to the ForgetPassword route
-//   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
