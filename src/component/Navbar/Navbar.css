@@ -48,7 +48,8 @@ body {
 }
 
 .nav-mneu h1 {
-  margin: 25px;
+  margin: 20px;
+  margin-bottom: 15px;
   color: #d01025;
   font-style: normal;
   font-size: 40px;
