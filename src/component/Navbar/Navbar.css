@@ -11,12 +11,7 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #f6f6f6;
-}
-.navbar {
-  background-color: #ffffff;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f6f6f6 !important;
 }
 .logo {
   width: 56px;
@@ -63,10 +58,9 @@ body {
 
 .nav-mneu .full-menu {
   display: flex;
-  gap: 2px;
+  /* gap: 2px; */
   flex-direction: column;
   list-style: none;
-
   width: 100%;
   margin-left: 25px;
   margin-right: 25px;
@@ -104,18 +98,16 @@ body {
   /* background: #D01025; */
   border-radius: 0px 10px 10px 0px;
 }
-/* 
-.user-menu {
-  margin: 20px;
-  display: flex;
-} */
 
 .user-list {
   /* padding-left: 20px; */
   margin: 0 !important;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  /* gap: 5px; */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .user-list > .sub-menu {
@@ -123,16 +115,30 @@ body {
   gap: 50px;
   font-size: 20px;
   align-items: center;
+  cursor: pointer;
+}
+
+/* Active styles for menu items */
+.full-menu li.active-tab svg path {
+  stroke:#d01025;
+}
+
+.full-menu li.active-tab a {
+  color:#d01025;
+}
+
+.full-menu li.active-tab .redb {
+  background-color:#d01025;
 }
 
 .container {
+  position: relative;
   display: flex;
   /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  position: absolute;
-  width: 1150px;
+  width: 1197px;
   height: 88px;
   left: 290px;
   top: 0px;
@@ -140,13 +146,9 @@ body {
   border-radius: 0px 0px 40px 0px;
 }
 
-.container .welcome {
+.welcome {
   width: 207px;
   height: 56px;
-  /* Inside auto layout */
-  /* flex: none;
-order: 0;
-flex-grow: 0; */
 }
 
 .welcome img {
@@ -186,74 +188,34 @@ flex-grow: 0; */
   border: none;
 }
 
-.search::placeholder { /* Most modern browsers support this now. */
-  font-family: 'Inter';
+.search::placeholder {
+  /* Most modern browsers support this now. */
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
   text-transform: capitalize;
-  color: #CACACA;
-  }
+  color: #cacaca;
+}
 
-  .subscr-translate{
-    /* Group 1000004181 */
-
-width: 146px;
-height: 32px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 0;
-
-  }
+.subscr-translate {
+  display: flex;
+  gap: 36px;
+  width: 146px;
+  height: 32px;
+  align-items: center;
+}
 .translate {
-  gap: 5px !important;
+  display: flex;
+  gap: 5px;
 }
-
-.full-menu li .redb {
-  background-color: initial;
-}
-
-/* Active styles for menu items */
-.full-menu li.active-tab svg path {
-  stroke: red;
-}
-
-.full-menu li.active-tab a {
-  color: red;
-}
-
-.full-menu li.active-tab .redb {
-  background-color: red;
-}
-
-/* Styles for the user dropdown */
-.user-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.user-list .sub-menu {
-  cursor: pointer;
-}
-
-.user-list .sub-menu a {
-  color: initial;
-}
-
-.user-list .sub-menu .redb {
-  background-color: initial;
-}
-
-/* Active styles for dropdown items */
-.user-list .sub-menu.active-tab a {
-  color: red;
-}
-
-.user-list .sub-menu.active-tab .redb {
-  background-color: red;
+.translate span{
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 18px;
+/* identical to box height */
+text-transform: capitalize;
+color: #D01025;
 }

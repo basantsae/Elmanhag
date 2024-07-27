@@ -11,26 +11,43 @@ function Navbar() {
     setLanguage((prevLanguage) => (prevLanguage === "en" ? "ar" : "en"));
   };
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
+  const [showEducationDropdown, setShowEducationDropdown] = useState(false);
 
   const [activeItem, setActiveItem] = useState("dashboard");
-  const [dropdownActiveItem, setDropdownActiveItem] = useState(null);
+  const [userDropdownActiveItem, setUserDropdownActiveItem] = useState(null);
+  const [educationDropdownActiveItem, setEducationDropdownActiveItem] = useState(null);
+
+  const toggleUserDropdown = () => {
+    setShowUserDropdown(!showUserDropdown);
+  };
+
+  const toggleEducationDropdown = () => {
+    setShowEducationDropdown(!showEducationDropdown);
+  };
 
   const handleItemClick = (item) => {
     setActiveItem(item);
     if (item === "user") {
-      toggleDropdown();
+      toggleUserDropdown();
+      setShowEducationDropdown(false);
+    } else if (item === "education") {
+      toggleEducationDropdown();
+      setShowUserDropdown(false);
     } else {
-      setShowDropdown(false);
+      setShowUserDropdown(false);
+      setShowEducationDropdown(false);
     }
   };
 
-  const handleDropdownItemClick = (item) => {
-    setDropdownActiveItem(item);
+  const handleUserDropdownItemClick = (item) => {
+    setUserDropdownActiveItem(item);
     setActiveItem("user");
+  };
+
+  const handleEducationDropdownItemClick = (item) => {
+    setEducationDropdownActiveItem(item);
+    setActiveItem("education");
   };
 
   return (
@@ -72,10 +89,8 @@ function Navbar() {
               </li>
 
               <li
-                className={
-                  activeItem === "user" || showDropdown ? "active-tab" : ""
-                }
-                onClick={() => handleItemClick("user")}
+                  className={activeItem === "user" || showUserDropdown ? "active-tab" : ""}
+                  onClick={() => handleItemClick("user")}
               >
                 <div className="redbl"></div>
                 <svg
@@ -103,31 +118,40 @@ function Navbar() {
                 <a href="/#">User</a>
               </li>
 
-              {showDropdown && (
+              {showUserDropdown && (
                 <ul className="user-list">
                   <li
                     className={`sub-menu ${
-                      dropdownActiveItem === "student" ? "active-tab" : ""
+                      userDropdownActiveItem === "student" ? "active-tab" : ""
                     }`}
-                    onClick={() => handleDropdownItemClick("student")}
+                    onClick={() => handleUserDropdownItemClick("student")}
                   >
                     <div className="redb"></div>
                     <a href="/#">. Student</a>
                   </li>
                   <li
                     className={`sub-menu ${
-                      dropdownActiveItem === "parent" ? "active-tab" : ""
+                      userDropdownActiveItem === "parent" ? "active-tab" : ""
                     }`}
-                    onClick={() => handleDropdownItemClick("parent")}
+                    onClick={() => handleUserDropdownItemClick("parent")}
                   >
                     <div className="redb"></div>
                     <a href="/#">. Parent</a>
                   </li>
                   <li
                     className={`sub-menu ${
-                      dropdownActiveItem === "admin" ? "active-tab" : ""
+                      userDropdownActiveItem === "teacher" ? "active-tab" : ""
                     }`}
-                    onClick={() => handleDropdownItemClick("admin")}
+                    onClick={() => handleUserDropdownItemClick("teacher")}
+                  >
+                    <div className="redb"></div>
+                    <a href="/#">. Teacher</a>
+                  </li>
+                  <li
+                    className={`sub-menu ${
+                      userDropdownActiveItem === "admin" ? "active-tab" : ""
+                    }`}
+                    onClick={() => handleUserDropdownItemClick("admin")}
                   >
                     <div className="redb"></div>
                     <a href="/#">. Admin</a>
@@ -135,11 +159,11 @@ function Navbar() {
                 </ul>
               )}
 
-              <li
-                className={activeItem === "education" ? "active-tab" : ""}
-                onClick={() => handleItemClick("education")}
-              >
-                <div className="redb"></div>
+        <li
+        className={activeItem === "education" || showEducationDropdown ? "active-tab" : ""}
+        onClick={() => handleItemClick("education")}
+        >
+                <div className="redbl"></div>
                 <svg
                   width="24"
                   height="24"
@@ -178,6 +202,47 @@ function Navbar() {
                 </svg>
                 <a href="/#">Education</a>
               </li>
+
+              {showEducationDropdown && (
+                <ul className="user-list">
+                  <li
+                    className={`sub-menu ${
+                      educationDropdownActiveItem === "categories" ? "active-tab" : ""
+                    }`}
+                    onClick={() => handleEducationDropdownItemClick("categories")}
+                  >
+                    <div className="redb"></div>
+                    <a href="/#">. Categories</a>
+                  </li>
+                  <li
+                    className={`sub-menu ${
+                      educationDropdownActiveItem === "subject" ? "active-tab" : ""
+                    }`}
+                    onClick={() => handleEducationDropdownItemClick("subject")}
+                  >
+                    <div className="redb"></div>
+                    <a href="/#">. Subject</a>
+                  </li>
+                  <li
+                    className={`sub-menu ${
+                      educationDropdownActiveItem === "bundles" ? "active-tab" : ""
+                    }`}
+                    onClick={() => handleEducationDropdownItemClick("bundles")}
+                  >
+                    <div className="redb"></div>
+                    <a href="/#">. Bundles</a>
+                  </li>
+                  <li
+                    className={`sub-menu ${
+                      educationDropdownActiveItem === "questions-bank" ? "active-tab" : ""
+                    }`}
+                    onClick={() => handleEducationDropdownItemClick("admin")}
+                  >
+                    <div className="redb"></div>
+                    <a href="/#">. Questions bank</a>
+                  </li>
+                </ul>
+              )}
 
               <li
                 className={activeItem === "h.w" ? "active-tab" : ""}
@@ -687,7 +752,7 @@ function Navbar() {
             </ul>
           </div>
         </div>
-        
+
         <div className="container">
           <div className="welcome">
             <img src={logo} alt="Logo" className="logo" />
@@ -759,21 +824,18 @@ function Navbar() {
               </div>
             </div>
             <div className="subscribe">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 20 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16 7C16 5.4087 15.3679 3.88258 14.2426 2.75736C13.1174 1.63214 11.5913 1 10 1C8.4087 1 6.88258 1.63214 5.75736 2.75736C4.63214 3.88258 4 5.4087 4 7C4 14 1 16 1 16H19C19 16 16 14 16 7Z"
-                  stroke="#D01025"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_583_119)">
+<path d="M22 12C22 10.4087 21.3679 8.88258 20.2426 7.75736C19.1174 6.63214 17.5913 6 16 6C14.4087 6 12.8826 6.63214 11.7574 7.75736C10.6321 8.88258 10 10.4087 10 12C10 19 7 21 7 21H25C25 21 22 19 22 12Z" stroke="#D01025" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.7295 25C17.5537 25.3031 17.3014 25.5547 16.9978 25.7295C16.6941 25.9044 16.3499 25.9965 15.9995 25.9965C15.6492 25.9965 15.3049 25.9044 15.0013 25.7295C14.6977 25.5547 14.4453 25.3031 14.2695 25" stroke="#D01025" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_583_119">
+<rect width="24" height="24" fill="white" transform="translate(4 4)"/>
+</clipPath>
+</defs>
+             </svg>
+
             </div>
           </div>
 
